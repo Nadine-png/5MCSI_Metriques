@@ -1,1 +1,50 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Évolution des températures - Tawarano</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+     
+      function drawChart() {
+        // Remplacer les données par des températures
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'Température (°C)'],
+          ['01/09/2024', 28],
+          ['02/09/2024', 30],
+          ['03/09/2024', 31],
+          ['04/09/2024', 29],
+          ['05/09/2024', 27],
+          ['06/09/2024', 26],
+          ['07/09/2024', 25],
+          ['08/09/2024', 24],
+          ['09/09/2024', 22],
+          ['10/09/2024', 23],
+          ['11/09/2024', 24],
+          ['12/09/2024', 25],
+          ['13/09/2024', 26],
+          ['14/09/2024', 28],
+          ['15/09/2024', 29]
+        ]);
 
+ 
+
+        var options = {
+          title: 'Distribution des températures à Tawarano',
+          legend: { position: 'none' },
+          hAxis: { title: 'Température (°C)' },
+          vAxis: { title: 'Fréquence' },
+        };
+
+ 
+
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
